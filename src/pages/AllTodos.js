@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import TodoActionButton from '../components/TodoActionButton';
 
 class AllTodos extends Component {
 
@@ -24,10 +25,10 @@ class AllTodos extends Component {
 							{ item.status }
 						</td>
 						<td>
-							<button onClick={ () => this.props.updateTodo(pos, {status: (item.status === 'completed') ? 'pending': 'completed' }) }>
-								{ (item.status === 'completed' ?
-									'Mark as unfinished' : 'Mark as finished') }
-							</button>
+							<TodoActionButton
+								status = { item.status }
+								pos= { pos }
+								onTodoClick = { this.props.updateTodo } />
 							<button onClick={ () => this.props.deleteTodo(pos) } >Delete</button>
 						</td>
 
