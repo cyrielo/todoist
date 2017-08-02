@@ -31,7 +31,6 @@ class AddTodo extends Component {
 	render() {
 		return (
 			<div>
-				<form>
 					<div>
 						<label htmlFor="todo-title">Title</label>
 						<br />
@@ -40,11 +39,10 @@ class AddTodo extends Component {
 					</div>
 					<br/>
 					<div>
-						<button onClick={ this.handleSubmit }>
+						<button type="button" onClick={ this.handleSubmit }>
 							Create Todo
 						</button>
 					</div>
-				</form>
 			</div>
 		);
 	}
